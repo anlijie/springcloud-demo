@@ -1,0 +1,19 @@
+spring:
+    application: 
+        name: config-client
+    cloud:
+        config:
+            profile: dev
+            
+            discovery:
+                enabled: true
+                serviceId: CONFIG-SERVER
+
+server: 
+    port: 8081
+    
+# 服务注册中心
+eureka:
+    client: 
+        serviceUrl:
+            defaultZone: http://localhost:9090/eureka/

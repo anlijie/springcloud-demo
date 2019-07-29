@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="LOG_APP">springcloud_logic_service</Property>
+        <Property name="LOG_PATH">D:\\appLog\\${LOG_APP}</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- stdout -->
+        <RollingFile name="Stdout" fileName="${LOG_PATH}\\stdout.log" filePattern="${LOG_PATH}\\$${date:yyyy-MM}\\stdout-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[${hostName}] %d{HH:mm:ss.SSS} [%t] [%level] %logger - %msg%n" />
+            <SizeBasedTriggeringPolicy size="5MB"/>
+        </RollingFile>
+        
+        <!-- stderr -->
+        <RollingFile name="Stderr" fileName="${LOG_PATH}\\stderr.log" filePattern="${LOG_PATH}\\$${date:yyyy-MM}\\stderr-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="[${hostName}] %d{HH:mm:ss.SSS} [%t] [%level] %logger - %msg%n" />
+            <SizeBasedTriggeringPolicy size="5MB"/>
+        </RollingFile>
+        
+        <!-- 控制台 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[${hostName}] %d{HH:mm:ss.SSS} [%t] [%level] %logger - %msg%n" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="Stdout" />
+            <AppenderRef ref="Stderr" level="error" />
+        </Root>
+    </Loggers>
+
+</Configuration>

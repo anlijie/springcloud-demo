@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.study</groupId>
+    <artifactId>spring-cloud</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>spring-cloud</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+    </properties>
+
+    <modules>
+        <!-- 配置中心服务 -->
+        <module>config-server</module>
+        <!-- 配置中心 客户端-->
+        <module>config-client</module>
+        <!-- 服务注册中心 -->
+        <module>eureka-server</module>
+        <!-- 服务提供者 -->
+        <module>logic-service</module>
+        <!-- 服务消费者 -->
+        <module>ribbon-consumer</module>
+        <!-- 服务消费者 -->
+        <module>feign-consumer</module>
+    </modules>
+</project>

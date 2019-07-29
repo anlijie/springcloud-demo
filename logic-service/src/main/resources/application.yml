@@ -1,0 +1,13 @@
+
+server:
+    port: 9091
+    
+spring: 
+    application:
+        name: logic-service
+
+# 服务注册中心
+eureka:
+    client: 
+        serviceUrl:
+            defaultZone: http://localhost:9090/eureka/

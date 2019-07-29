@@ -1,0 +1,27 @@
+
+server:
+    port: 8080
+    
+spring:
+    application:
+        name: config-server
+    
+    # git管理配置
+    cloud:
+        config:
+            server:
+                git:
+                    # 配置git仓库位置
+                    uri: https://gitee.com/fxrWinters/springcloud/
+                    # 配置仓库路径下的相对搜索位置，可以配置多个
+                    searchPaths: config-server/config-repo
+                    # 访问git仓库的用户名
+                    username: fxrCross
+                    # 访问git仓库的用户密码
+                    password: fxr123456
+                    
+# 服务注册中心
+eureka:
+    client: 
+        serviceUrl:
+            defaultZone: http://localhost:9090/eureka/

@@ -1,0 +1,18 @@
+
+server:
+    port: 8090
+    
+spring: 
+    application:
+        name: ribbon-consumer
+
+# 服务注册中心
+eureka:
+    client: 
+        serviceUrl:
+            defaultZone: http://localhost:9090/eureka/
+            
+# 服务提供方
+service:
+    root:
+        logic: http://LOGIC-SERVICE

@@ -1,0 +1,19 @@
+
+server:
+    port: 8091
+    
+spring: 
+    application:
+        name: feign-consumer
+
+# 服务注册中心
+eureka:
+    client: 
+        serviceUrl:
+            defaultZone: http://localhost:9090/eureka/
+
+# 开启hystrix支持
+feign: 
+    hystrix: 
+        enabled: true
+
