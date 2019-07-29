@@ -11,6 +11,7 @@ import cn.com.study.fallback.LogicClientHystrix;
 @FeignClient(value = "logic-service", fallback = LogicClientHystrix.class)
 public interface LogicClient {
 
+	// 配置
     @RequestMapping(value = "/caculate")
     JSONObject caculate(@RequestParam(value = "paramA") Integer paramA, 
             @RequestParam(value = "paramB") Integer paramB);
